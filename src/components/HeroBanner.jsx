@@ -14,7 +14,12 @@ const HeroBanner = ({ movie }) => {
       <div className="hero-content">
         <div className="hero-overlay" />
         <div className="hero-text">
-          <h1>{movie.Title}</h1>
+          <div className="hero-title-container">
+            {movie.Poster && movie.Poster !== 'N/A' && (
+              <img className="hero-poster" src={movie.Poster} alt={movie.Title} />
+            )}
+            <h1>{movie.Title}</h1>
+          </div>
           <div className="hero-meta">
             <span className="year">{movie.Year}</span>
             {movie.imdbRating && (

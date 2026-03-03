@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './MovieRow.css';
 
 const MovieRow = ({ title, movies = [] }) => {
@@ -35,13 +35,11 @@ const MovieRow = ({ title, movies = [] }) => {
                 <span>No Image</span>
               </div>
             )}
-            {hoveredMovie === movie.imdbID && (
-              <div className="movie-info-overlay">
-                <h3>{movie.Title}</h3>
-                <p>{movie.Year}</p>
-                <p>Rating: {movie.imdbRating || 'N/A'}</p>
-              </div>
-            )}
+            <div className="movie-info-overlay permanent">
+              <h3>{movie.Title}</h3>
+              <p>{movie.Year}</p>
+              <p>Rating: {movie.imdbRating || 'N/A'}</p>
+            </div>
           </div>
         ))}
       </div>
